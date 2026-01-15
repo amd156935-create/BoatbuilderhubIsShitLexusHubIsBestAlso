@@ -1,38 +1,72 @@
 -- maded by Chatgpt bc I don't have fucking time. 
 
-local player = game.Players.LocalPlayer
+-- Script data
+local SCRIPT_URL = "https://keysystem.work.ink/scripts/019bc1b3-ccdf-757a-9ad4-09fd065e448d"
+local SCRIPT_TEXT = 'loadstring(game:HttpGet("' .. SCRIPT_URL .. '"))()'
 
--- ScreenGui
+-- Create ScreenGui
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Parent = player:WaitForChild("PlayerGui")
+ScreenGui.Name = "UpdateGui"
 ScreenGui.ResetOnSpawn = false
+ScreenGui.Parent = game:GetService("CoreGui")
 
 -- Main Frame
 local Frame = Instance.new("Frame")
+Frame.Size = UDim2.new(0, 360, 0, 230)
+Frame.Position = UDim2.new(0.5, -180, 0.5, -115)
+Frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Frame.Parent = ScreenGui
-Frame.Size = UDim2.new(0, 400, 0, 200)
-Frame.Position = UDim2.new(0.5, -200, 0.5, -100)
-Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Frame.BorderSizePixel = 0
 
--- Main Text
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Parent = Frame
-TextLabel.Size = UDim2.new(1, -20, 0, 120)
-TextLabel.Position = UDim2.new(0, 10, 0, 40)
-TextLabel.Text = "THIS SCRIPT IS IN WORK\n(updating soon)"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1
-TextLabel.TextScaled = true
-TextLabel.Font = Enum.Font.GothamBold
+local FrameCorner = Instance.new("UICorner")
+FrameCorner.CornerRadius = UDim.new(0, 12)
+FrameCorner.Parent = Frame
 
--- Optional Status Text (auto shown)
-local Status = Instance.new("TextLabel")
-Status.Parent = Frame
-Status.Size = UDim2.new(1, -20, 0, 30)
-Status.Position = UDim2.new(0, 10, 0, 10)
-Status.Text = "Status: Updating... Please wait"
-Status.TextColor3 = Color3.fromRGB(200, 200, 200)
-Status.BackgroundTransparency = 1
-Status.TextScaled = true
-Status.Font = Enum.Font.Gotham
+-- Title
+local Title = Instance.new("TextLabel")
+Title.Size = UDim2.new(1, 0, 0, 45)
+Title.BackgroundTransparency = 1
+Title.Text = "SCRIPT EXECUTOR"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.Font = Enum.Font.GothamBold
+Title.TextScaled = true
+Title.Parent = Frame
+
+-- Button creator
+local function createButton(text, yPos)
+    local Button = Instance.new("TextButton")
+    Button.Size = UDim2.new(0, 300, 0, 40)
+    Button.Position = UDim2.new(0.5, -150, 0, yPos)
+    Button.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Button.Text = text
+    Button.Font = Enum.Font.GothamBold
+    Button.TextScaled = true
+    Button.Parent = Frame
+
+    local Corner = Instance.new("UICorner")
+    Corner.CornerRadius = UDim.new(0, 10)
+    Corner.Parent = Button
+
+    return Button
+end
+
+-- Buttons
+local ExecuteButton = createButton("EXECUTE SCRIPT", 60)
+local UpdateButton = createButton("GET THE UPDATED SCRIPT", 110)
+local CopyButton = createButton("COPY SCRIPT", 160)
+
+-- Execute function
+local function executeScript()
+    loadstring(game:HttpGet(SCRIPT_URL))()
+    ScreenGui:Destroy()
+end
+
+-- Connections
+ExecuteButton.MouseButton1Click:Connect(executeScript)
+UpdateButton.MouseButton1Click:Connect(executeScript)
+
+CopyButton.MouseButton1Click:Connect(function()
+    if setclipboard then
+        setclipboard(SCRIPT_TEXT)
+    end
+end)
