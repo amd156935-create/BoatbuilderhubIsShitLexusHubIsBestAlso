@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/amd156935-create/BoatbuilderhubIsShitLexusHubIsBestAlso/main/moonveil.lua%20(11).txt"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/amd156935-create/BoatbuilderhubIsShitLexusHubIsBestAlso/main/moonveil.lua", true))()
