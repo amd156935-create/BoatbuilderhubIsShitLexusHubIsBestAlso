@@ -1,4 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/amd156935-create/BoatbuilderhubIsShitLexusHubIsBestAlso/refs/heads/main/bbcd7a4d0d400197.lua%20(1).txt"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/amd156935-create/BoatbuilderhubIsShitLexusHubIsBestAlso/refs/heads/main/a48c3ae439488468.lua.txt"))()
 
 
 
