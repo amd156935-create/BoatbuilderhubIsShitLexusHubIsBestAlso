@@ -1,5 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/amd156935-create/BoatbuilderhubIsShitLexusHubIsBestAlso/refs/heads/main/goofyscator.lua.txt"))()
-
-
-
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/amd156935-create/Ftcu/main/a04f460c7140cbcf.lua.txt"))()
