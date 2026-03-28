@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/amd156935-create/Lexushu../refs/heads/main/5b26761dbba39f2e.lua%20(2).txt"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/amd156935-create/Hxfnhfxhmxfmht/refs/heads/main/b455a34c9abd90bc.lua.txt"))()
