@@ -40,5 +40,5 @@ else
     warn(" Request crashed:", response)
 end
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/amd156935-create/Jill/refs/heads/main/a04f460c7140cbcf.lua%20(4).txt"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/amd156935-create/Fusible/refs/heads/main/acbbc670f1708a51.lua.txt"))()
 
